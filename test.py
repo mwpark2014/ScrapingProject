@@ -3,7 +3,7 @@ import sys
 
 # Gather our code in a main() function
 def main():
-  print 'Hello there', sys.argv[1]
+  print ('Hello there')
   # Command line args are in sys.argv[1], sys.argv[2] ..
   # sys.argv[0] is the script name itself and can be ignored
 
