@@ -1,6 +1,7 @@
 from sqlalchemy import create_engine, Table, MetaData
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
+import databaseconfig as cfg
 
 #TODO: Account for connection errors or database validation errors
 #TODO: See if class can be written better design-wise
@@ -8,7 +9,7 @@ from sqlalchemy.ext.declarative import declarative_base
 #This file facilitates connecting to the database, creating objects
 #   that map to RDBMS tables, and CRUD operations
 #Replace dbPath with user:password@path/db_name
-dbPath = 'root:***REMOVED***@127.0.0.1:3306/grocery_items.db'
+dbPath = cfg.mysql['user'] + ':' + cfg.mysql['psswd'] + '@' + cfg.mysql['host'] + '/' + cfg.mysql['db']
 Base = declarative_base()
 engine = create_engine('mysql+mysqlconnector://%s' % dbPath,
                        echo=True)
