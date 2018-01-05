@@ -1,7 +1,7 @@
 from sqlalchemy import create_engine, Table, MetaData
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
-import databaseconfig.py as cfg
+import databaseconfig as cfg
 
 #TODO: Account for connection errors or database validation errors
 #TODO: See if class can be written better design-wise
