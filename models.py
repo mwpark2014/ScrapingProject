@@ -8,7 +8,8 @@ import databaseconfig as cfg
 
 #This file facilitates connecting to the database, creating objects
 #   that map to RDBMS tables, and CRUD operations
-#Replace dbPath with user:password@path/db_name
+#Replace dbPath with user:password@path
+# /db_name
 dbPath = cfg.mysql['user'] + ':' + cfg.mysql['psswd'] + '@' + cfg.mysql['host'] + '/' + cfg.mysql['db']
 Base = declarative_base()
 engine = create_engine('mysql+mysqlconnector://%s' % dbPath,
